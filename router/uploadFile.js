@@ -11,7 +11,13 @@ var uploader  = multer({
 
 const router = express.Router();
 
+router.get('/',(req, res)=>{
+    res.status(200).send({
+        status: true,
+    })
+})
 //file is the key name comes from the header
 router.post('/file-upload',uploader.single("file"),uploadFile)
+
 
 module.exports = router;
