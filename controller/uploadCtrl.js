@@ -4,8 +4,6 @@ const Store = require("../models/fileUploadModel.js")
 
 const uploadFile = async (req, res)=>{
     try {
-        console.log(req.file.path);
-        console.log(req.file.type)
         const upload = await uploadResult(req.file.path);
         var store = new Store({
             file_url : upload.secure_url
