@@ -10,7 +10,7 @@ const app = express();
 const uploadRouter = require("./router/uploadFile.js")
 const dbConnection = require("./config/dbConnect.js")
 
-app
+app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: false}))
 
